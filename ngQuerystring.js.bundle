@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <bundle minify="true" runOnBuild="true" output="ngQuerystring.js">
-  
-  <file>/app/libs/ngQueryString/ngQueryString.mdl.js</file>
+ 
+	<file>/src/ngquerystring.mdl.js</file>
 
-  <file>/app/libs/ngquerystring/services/clearquerystring.svc.js</file>
-  <file>/app/libs/ngquerystring/services/getquerystring.svc.js</file>
-  <file>/app/libs/ngquerystring/services/setquerystring.svc.js</file>
+	<file>/src/services/clearquerystring.svc.js</file>
+	<file>/src/services/getquerystring.svc.js</file>
+	<file>/src/services/setquerystring.svc.js</file>
 
-  <file>/app/libs/ngQueryString/ngQueryString.svc.js</file>
+  <file>/src/ngquerystring.svc.js</file>
   
 </bundle>

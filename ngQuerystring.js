@@ -1,7 +1,7 @@
-﻿///#source 1 1 /app/libs/ngQueryString/ngQueryString.mdl.js
+﻿///#source 1 1 /src/ngquerystring.mdl.js
 var ngQueryString = angular.module('ngQueryString', []);
 
-///#source 1 1 /app/libs/ngquerystring/services/clearquerystring.svc.js
+///#source 1 1 /src/services/clearquerystring.svc.js
 
 ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
 
@@ -14,13 +14,11 @@ ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
     return clearQueryString;
 
 });
-///#source 1 1 /app/libs/ngquerystring/services/getquerystring.svc.js
+///#source 1 1 /src/services/getquerystring.svc.js
 
 ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
 
     var getQueryString = function (name) {
-
-        console.log(name);
 
         var queryStrings = $location.search();
                  
@@ -35,7 +33,7 @@ ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
     return getQueryString;
 
 });
-///#source 1 1 /app/libs/ngquerystring/services/setquerystring.svc.js
+///#source 1 1 /src/services/setquerystring.svc.js
 
 ngQueryString.service('ngQueryString.setQueryString', function ($location) {
 
@@ -51,7 +49,7 @@ ngQueryString.service('ngQueryString.setQueryString', function ($location) {
 
 
 });
-///#source 1 1 /app/libs/ngQueryString/ngQueryString.svc.js
+///#source 1 1 /src/ngquerystring.svc.js
 
 ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', function (setQueryString, getQueryString, clearQueryString) {
 
