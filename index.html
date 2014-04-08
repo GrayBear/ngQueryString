@@ -9,6 +9,7 @@
 
     <hr />
 
+
     <h2>
         setQueryString(name, value)
     </h2>
@@ -40,7 +41,7 @@
     </h2>
 
 
-    <p>Adds a query sting to your angular path</p>
+    <p>gets a query string parameter by name </p>
 
     <form ng-submit="getQueryStringClick()">
 
@@ -59,7 +60,7 @@
                 Results for
                 <span ng-bind="getQueryString.name"></span>
             </h3>
-            
+
         </div>
         <div class="panel-body">
             <p ng-bind="getQueryString.results"></p>
@@ -69,11 +70,10 @@
     <hr />
 
     <h2>
-        clearQueryString()
+        clearQueryString(name)
     </h2>
 
-
-    <p>Removes all querystring parameters</p>
+    <p>Removes an individual query string parameters by name</p>
 
     <form ng-submit="clearQueryStringClick()">
 
@@ -86,10 +86,13 @@
 
     </form>
 
+    <hr />
+
+
     <script src="app/libs/angular/angular.min.js"></script>
 
     <script src="ngQuerystring.js"></script>
-    
+
     <script src="app/app.mdl.js"></script>
 
 </body>
