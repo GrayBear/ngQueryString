@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>ngQueryString</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+</head>
+<body class="container" ng-app="test" ng-controller="TestCtrl">
+
+    <h1>ngQueryString</h1>
+
+    <hr />
+
+    <h2>
+        setQueryString(name, value)
+    </h2>
+
+    <p>Adds a query sting to your angular path</p>
+
+    <form ng-submit="setQueryStringClick()">
+
+        <div class="form-group">
+            <label for="setQueryStringName">Name</label>
+            <input class="form-control" id="setQueryStringName" ng-model="setQueryString.name" type="text" placeholder="add name of querystring parameter" />
+        </div>
+
+        <div class="form-group">
+            <label for="setQueryStringValue">Value</label>
+            <input class="form-control" id="setQueryStringValue" ng-model="setQueryString.value" type="text" placeholder="add value of querystring parameter" required />
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="setQuerySting(name, value)" />
+    </form>
+
+    <p>Please note new query string are appended to the existing ones</p>
+
+    <hr />
+
+
+    <h2>
+        getQueryString(name)
+    </h2>
+
+
+    <p>Adds a query sting to your angular path</p>
+
+    <form ng-submit="getQueryStringClick()">
+
+        <div class="form-group">
+            <label for="getQueryStringName">Name</label>
+            <input class="form-control" id="getQueryStringName" ng-model="getQueryString.name" type="text" placeholder="add name of querystring parameter" />
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="getQuerySting(name)" />
+
+    </form>
+
+    <div ng-show="getQueryString.submitted" class="panel panel-default">
+        <div class="panel-heading">
+            <h3>
+                Results for
+                <span ng-bind="getQueryString.name"></span>
+            </h3>
+            
+        </div>
+        <div class="panel-body">
+            <p ng-bind="getQueryString.results"></p>
+        </div>
+    </div>
+
+    <hr />
+
+    <h2>
+        clearQueryString()
+    </h2>
+
+
+    <p>Removes all querystring parameters</p>
+
+    <form ng-submit="clearQueryStringClick()">
+
+        <div class="form-group">
+            <label for="clearQueryStringName">Name</label>
+            <input class="form-control" id="clearQueryStringName" ng-model="clearQueryString.name" type="text" placeholder="add name of querystring parameter" />
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="clearQuerySting(name)" />
+
+    </form>
+
+    <script src="app/libs/angular/angular.min.js"></script>
+
+    <script src="app/libs/ngQueryString/ngQueryString.mdl.js"></script>
+    <script src="app/libs/ngQueryString/services/setQueryString.svc.js"></script>
+    <script src="app/libs/ngQueryString/services/getQueryString.svc.js"></script>
+    <script src="app/libs/ngQueryString/services/clearQueryString.svc.js"></script>
+
+    <script src="app/app.mdl.js"></script>
+
+</body>
+
+</html>
+
+
