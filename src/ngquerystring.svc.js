@@ -1,5 +1,5 @@
 ﻿
-ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', function (setQueryString, getQueryString, clearQueryString) {
+ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', 'ngQueryString.getAllQueryString', 'ngQueryString.clearAllQueryString', function (setQueryString, getQueryString, clearQueryString, getAllQueryString, clearAllQueryString) {
 
     return {
 
@@ -11,8 +11,14 @@ ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryStr
             return getQueryString(name);
         },
 
+        getAllQueryString: function(){
+            return getAllQueryString();
+        },
         clearQueryString: function (name) {
             clearQueryString(name);
+        },
+        clearAllQueryString: function(){
+            clearAllQueryString();
         }
 
     }

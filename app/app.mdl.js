@@ -21,12 +21,25 @@
 
     };
 
+    $scope.getAllQueryString = {};
+
+    $scope.getAllQueryStringClick = function () {
+        $scope.getAllQueryString.submitted = true;
+        $scope.getAllQueryString.results = ngQueryString.getAllQueryString();
+    }
+
     $scope.clearQueryString = {};
 
     $scope.clearQueryStringClick = function () {
-
-        $scope.getQueryString.submitted = true;
+         
         ngQueryString.clearQueryString($scope.clearQueryString.name);
+
+    };
+
+
+    $scope.clearAllQueryStringClick = function () {
+
+        ngQueryString.clearAllQueryString();
 
     };
 

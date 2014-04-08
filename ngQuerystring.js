@@ -33,6 +33,21 @@ ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
     return getQueryString;
 
 });
+///#source 1 1 /src/services/getallquerystring.svc.js
+
+ngQueryString.factory('ngQueryString.getAllQueryString', function ($location) {
+
+    var getAllQueryString = function () {
+
+        var queryStrings = $location.search();
+
+        return queryStrings;
+
+    };
+
+    return getAllQueryString;
+
+});
 ///#source 1 1 /src/services/setquerystring.svc.js
 
 ngQueryString.service('ngQueryString.setQueryString', function ($location) {
@@ -49,9 +64,27 @@ ngQueryString.service('ngQueryString.setQueryString', function ($location) {
 
 
 });
+///#source 1 1 /src/services/clearallquerystring.svc.js
+
+ngQueryString.factory('ngQueryString.clearAllQueryString', function ($location) {
+
+    var clearAllQueryString = function () {
+
+        var queryStrings = $location.search();
+
+        for (var stings in queryStrings) {
+            var name = stings;
+            $location.search(name, null);
+        }
+   
+        return queryStrings;
+    };
+
+    return clearAllQueryString;
+});
 ///#source 1 1 /src/ngquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', function (setQueryString, getQueryString, clearQueryString) {
+ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', 'ngQueryString.getAllQueryString', 'ngQueryString.clearAllQueryString', function (setQueryString, getQueryString, clearQueryString, getAllQueryString, clearAllQueryString) {
 
     return {
 
@@ -63,8 +96,14 @@ ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryStr
             return getQueryString(name);
         },
 
+        getAllQueryString: function(){
+            return getAllQueryString();
+        },
         clearQueryString: function (name) {
             clearQueryString(name);
+        },
+        clearAllQueryString: function(){
+            clearAllQueryString();
         }
 
     }

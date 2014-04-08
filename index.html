@@ -35,6 +35,27 @@
 
     <hr />
 
+    <h2>
+        getAllQueryString()
+    </h2>
+
+    <p>returns an array of all the query strings </p>
+
+
+    <form ng-submit="getAllQueryStringClick()">
+
+        <input class="btn btn-primary" type="submit" value="getAllQuerySting()" />
+
+    </form>
+
+    <div ng-show="getAllQueryString.submitted" class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Results</h3>
+        </div>
+        <div class="panel-body">
+            {{getAllQueryString.results}}
+        </div>
+    </div>
 
     <h2>
         getQueryString(name)
@@ -42,6 +63,8 @@
 
 
     <p>gets a query string parameter by name </p>
+
+
 
     <form ng-submit="getQueryStringClick()">
 
@@ -87,6 +110,18 @@
     </form>
 
     <hr />
+
+    <h2>
+        clearAllQueryString()
+    </h2>
+
+    <p>Removes an all query string parameters</p>
+
+    <form ng-submit="clearAllQueryStringClick()">
+
+        <input class="btn btn-primary" type="submit" value="clearAllQueryString()" />
+
+    </form>
 
 
     <script src="app/libs/angular/angular.min.js"></script>

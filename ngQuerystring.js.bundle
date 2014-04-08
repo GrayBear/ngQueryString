@@ -5,8 +5,10 @@
 
 	<file>/src/services/clearquerystring.svc.js</file>
 	<file>/src/services/getquerystring.svc.js</file>
+	<file>/src/services/getallquerystring.svc.js</file>
 	<file>/src/services/setquerystring.svc.js</file>
-
+	<file>/src/services/clearallquerystring.svc.js</file>
+  
   <file>/src/ngquerystring.svc.js</file>
   
 </bundle>
