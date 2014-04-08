@@ -1,5 +1,5 @@
 ﻿angular.module('test', ['ngQueryString'])
-.controller('TestCtrl', ['$scope', 'ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', function ($scope, setQueryString, getQueryString, clearQueryString) {
+.controller('TestCtrl', ['$scope', 'ngQueryString.ngQueryString', function ($scope, ngQueryString) {
 
     $scope.demo = {};
 
@@ -7,7 +7,7 @@
 
     $scope.setQueryStringClick = function () {
 
-        setQueryString($scope.setQueryString.name, $scope.setQueryString.value);
+        ngQueryString.setQueryString($scope.setQueryString.name, $scope.setQueryString.value);
 
     }
 
@@ -16,9 +16,8 @@
     $scope.getQueryStringClick = function () {
 
         $scope.getQueryString.submitted = true;
-        $scope.getQueryString.results = getQueryString($scope.getQueryString.name);
+        $scope.getQueryString.results = ngQueryString.getQueryString($scope.getQueryString.name);
 
-        console.log($scope.getQueryString.results);
 
     };
 
@@ -27,7 +26,7 @@
     $scope.clearQueryStringClick = function () {
 
         $scope.getQueryString.submitted = true;
-        clearQueryString($scope.clearQueryString.name);
+        ngQueryString.clearQueryString($scope.clearQueryString.name);
 
     };
 

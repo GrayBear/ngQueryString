@@ -1,14 +1,21 @@
 ﻿
-ngQueryString.factory('ngQueryString.ngQueryString', [function ($location) {
+ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', function (setQueryString, getQueryString, clearQueryString) {
 
-    var getQueryString = function () {
+    return {
 
+        setQueryString: function (name, value) {
+            setQueryString(name, value);
+        },
 
-        this.getQueryString = function () {
+        getQueryString: function (name) {
+            return getQueryString(name);
+        },
 
-
+        clearQueryString: function (name) {
+            clearQueryString(name);
         }
 
-    };
+    }
+
 
 }])
