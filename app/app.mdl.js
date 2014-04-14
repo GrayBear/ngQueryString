@@ -1,5 +1,5 @@
 ﻿angular.module('test', ['ngQueryString'])
-.controller('TestCtrl', ['$scope', 'ngQueryString.ngQueryString', function ($scope, ngQueryString) {
+.controller('TestCtrl', ['$scope', 'ngQueryString', function ($scope, ngQueryString) {
 
     $scope.demo = {};
 
