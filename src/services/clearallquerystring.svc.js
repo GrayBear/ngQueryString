@@ -1,5 +1,5 @@
 ﻿
-ngQueryString.factory('ngQueryString.clearAllQueryString', function ($location) {
+ngQueryString.service('ngQueryString.clearAllQueryString',['$location', function ($location) {
 
     var clearAllQueryString = function () {
 
@@ -9,9 +9,8 @@ ngQueryString.factory('ngQueryString.clearAllQueryString', function ($location) 
             var name = stings;
             $location.search(name, null);
         }
-   
-        return queryStrings;
+    
     };
 
     return clearAllQueryString;
-});
+}]);

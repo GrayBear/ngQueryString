@@ -1,5 +1,5 @@
 ﻿
-ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
+ngQueryString.service('ngQueryString.getQueryString',['$location',  function ($location) {
 
     var getQueryString = function (name) {
 
@@ -15,4 +15,4 @@ ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
 
     return getQueryString;
 
-});
+}]);

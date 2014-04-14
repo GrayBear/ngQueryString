@@ -1,5 +1,5 @@
 ﻿
-ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
+ngQueryString.factory('ngQueryString.clearQueryString',['$location',  function ($location) {
 
     var clearQueryString = function (name) {
 
@@ -9,4 +9,4 @@ ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
 
     return clearQueryString;
 
-});
+}]);

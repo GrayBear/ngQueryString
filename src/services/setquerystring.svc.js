@@ -1,10 +1,8 @@
 ﻿
-ngQueryString.service('ngQueryString.setQueryString', function ($location) {
+ngQueryString.service('ngQueryString.setQueryString', ['$location', function ($location) {
 
     return setQueryString = function (name, value) {
 
-
-        var valueEncoded = value;
 
         $location.search(name, value);
 
@@ -12,4 +10,4 @@ ngQueryString.service('ngQueryString.setQueryString', function ($location) {
     };
 
 
-});
+}]);

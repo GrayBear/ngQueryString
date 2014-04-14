@@ -3,7 +3,7 @@ var ngQueryString = angular.module('ngQueryString', []);
 
 ///#source 1 1 /src/services/clearquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
+ngQueryString.factory('ngQueryString.clearQueryString',['$location',  function ($location) {
 
     var clearQueryString = function (name) {
 
@@ -13,10 +13,10 @@ ngQueryString.factory('ngQueryString.clearQueryString', function ($location) {
 
     return clearQueryString;
 
-});
+}]);
 ///#source 1 1 /src/services/getquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
+ngQueryString.service('ngQueryString.getQueryString',['$location',  function ($location) {
 
     var getQueryString = function (name) {
 
@@ -32,30 +32,28 @@ ngQueryString.factory('ngQueryString.getQueryString', function ($location) {
 
     return getQueryString;
 
-});
+}]);
 ///#source 1 1 /src/services/getallquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.getAllQueryString', function ($location) {
+ngQueryString.service('ngQueryString.getAllQueryString',['$location',  function ($location) {
 
     var getAllQueryString = function () {
 
-        var queryStrings = $location.search();
+       return $location.search();
 
-        return queryStrings;
+ 
 
     };
 
     return getAllQueryString;
 
-});
+}]);
 ///#source 1 1 /src/services/setquerystring.svc.js
 
-ngQueryString.service('ngQueryString.setQueryString', function ($location) {
+ngQueryString.service('ngQueryString.setQueryString', ['$location', function ($location) {
 
     return setQueryString = function (name, value) {
 
-
-        var valueEncoded = value;
 
         $location.search(name, value);
 
@@ -63,10 +61,10 @@ ngQueryString.service('ngQueryString.setQueryString', function ($location) {
     };
 
 
-});
+}]);
 ///#source 1 1 /src/services/clearallquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.clearAllQueryString', function ($location) {
+ngQueryString.service('ngQueryString.clearAllQueryString',['$location', function ($location) {
 
     var clearAllQueryString = function () {
 
@@ -76,15 +74,14 @@ ngQueryString.factory('ngQueryString.clearAllQueryString', function ($location) 
             var name = stings;
             $location.search(name, null);
         }
-   
-        return queryStrings;
+    
     };
 
     return clearAllQueryString;
-});
+}]);
 ///#source 1 1 /src/ngquerystring.svc.js
 
-ngQueryString.factory('ngQueryString.ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', 'ngQueryString.getAllQueryString', 'ngQueryString.clearAllQueryString', function (setQueryString, getQueryString, clearQueryString, getAllQueryString, clearAllQueryString) {
+ngQueryString.service('ngQueryString', ['ngQueryString.setQueryString', 'ngQueryString.getQueryString', 'ngQueryString.clearQueryString', 'ngQueryString.getAllQueryString', 'ngQueryString.clearAllQueryString', function (setQueryString, getQueryString, clearQueryString, getAllQueryString, clearAllQueryString) {
 
     return {
 

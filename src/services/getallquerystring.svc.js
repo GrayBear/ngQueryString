@@ -1,14 +1,14 @@
 ﻿
-ngQueryString.factory('ngQueryString.getAllQueryString', function ($location) {
+ngQueryString.service('ngQueryString.getAllQueryString',['$location',  function ($location) {
 
     var getAllQueryString = function () {
 
-        var queryStrings = $location.search();
+       return $location.search();
 
-        return queryStrings;
+ 
 
     };
 
     return getAllQueryString;
 
-});
+}]);
