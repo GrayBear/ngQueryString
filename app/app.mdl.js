@@ -1,5 +1,5 @@
 ﻿angular.module('test', ['ngQueryString'])
-.controller('TestCtrl', ['$scope', 'ngQueryString', function ($scope, ngQueryString) {
+.controller('TestCtrl', ['$scope', 'ngQueryString', '$location', '$anchorScroll', function ($scope, ngQueryString, $location, $anchorScroll) {
 
     $scope.demo = {};
 
@@ -43,4 +43,13 @@
 
     };
 
+    $scope.scrollTo = function (anchor) {
+
+        $location.hash(anchor);
+        $anchorScroll();
+    }
+
+
 }])
+
+

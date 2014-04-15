@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset='utf-8'>
-
     <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/site.css" rel="stylesheet" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -26,18 +26,27 @@
                 <a href="https://github.com/GrayBear/ngQueryString" id="view-on-github" class="button"><span>View on GitHub</span></a>
             </section>
 
+            Produced by <a href="http://graybear.github.io">GrayBearWD</a>
+
             <hr>
 
             <section id="main_content">
 
-                <h1>ngQueryString</h1>
+                <h1>Contents</h1>
+
+                <a href="" ng-click="scrollTo('demo')">Demo</a><br />
+                <a href="" ng-click="scrollTo('howtouse')">How to use</a>
+
 
                 <hr />
 
 
-                <h2>
+
+                <h2 id="demo">Demo</h2>
+
+                <h3>
                     setQueryString(name, value)
-                </h2>
+                </h3>
 
                 <p>Adds a query sting to your angular path</p>
 
@@ -60,9 +69,9 @@
 
                 <hr />
 
-                <h2>
+                <h3>
                     getAllQueryString()
-                </h2>
+                </h3>
 
                 <p>returns an array of all the query strings </p>
 
@@ -82,9 +91,9 @@
                     </div>
                 </div>
 
-                <h2>
+                <h3>
                     getQueryString(name)
-                </h2>
+                </h3>
 
 
                 <p>gets a query string parameter by name </p>
@@ -117,9 +126,9 @@
 
                 <hr />
 
-                <h2>
+                <h3>
                     clearQueryString(name)
-                </h2>
+                </h3>
 
                 <p>Removes an individual query string parameters by name</p>
 
@@ -136,9 +145,9 @@
 
                 <hr />
 
-                <h2>
+                <h3>
                     clearAllQueryString()
-                </h2>
+                </h3>
 
                 <p>Removes an all query string parameters</p>
 
@@ -148,17 +157,60 @@
 
                 </form>
 
+            </section>
 
-                <script src="app/libs/angular/angular.min.js"></script>
-                <script src="app/libs/ngQuerystring.min.js"></script>
 
-                <script src="app/app.mdl.js"></script>
+            <section>
+
+                <h2 id="howtouse">How to use</h2>
+
+                <p>Add the <i>ngQuerysting.min.js</i> file below you angular file and above your application</p>
+
+                <p class="code">
+                    &lt;script src=&quot;app/libs/angular/angular.min.js&quot;&gt;&lt;/script&gt <br />
+                    &lt;script src=&quot;app/libs/ngQuerystring.min.js&quot;&gt;&lt;/script&gt;
+                </p>
+
+                <p>Reference the ngQueryString module in your application </p>
+
+                <p class="code">
+                    angular.module(&#39;application&#39;, [&#39;ngQueryString&#39;])
+                </p>
+
+                <p>Add the service to your controller</p>
+
+                <p class="code">
+                    .controller(&#39;controller&#39;, [&#39;$scope&#39;, &#39;ngQueryString&#39;, function ($scope, ngQueryString) angular.module(&#39;test&#39;, [&#39;ngQueryString&#39;])
+                </p>
+
+                <p>Use the ngQuerysting as you wish</p>
+
+                <p>e.g. </p>
+                <p class="code">
+                    ngQueryString.setQueryString(name, value);
+                </p>
+                <p class="code">
+                    $scope.getQueryString.results = ngQueryString.getQueryString(&quot;name&quot;);
+                </p>
+
+
+                <p>for further information on how to use please review the demo code here <a href="https://github.com/GrayBear/ngQueryString">GitHub</a></p>
+
 
             </section>
 
 
+            <footer>
+
+                Produced by <a href="http://graybear.github.io">GrayBearWD</a>
+
+            </footer>
 
 
+            <script src="app/libs/angular/angular.min.js"></script>
+            <script src="app/libs/ngQuerystring.min.js"></script>
+
+            <script src="app/app.mdl.min.js"></script>
         </div>
     </div>
 </body>
